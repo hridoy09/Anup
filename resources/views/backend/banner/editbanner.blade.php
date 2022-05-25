@@ -28,16 +28,16 @@
                                 </ul>
                             </div>
                             @endif
-                            <form class="form-valide" action="{{route('product.update',$product->id) }}" method="post" enctype="multipart/form-data">
+                            <form class="form-valide" action="{{route('banner.update',$banner->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-category">Product Image<span
+                                    <label class="col-lg-4 col-form-label" for="val-category">banner Image<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="file" required class="form-control" name="product_image"
-                                            value="{{$product->product_image}}">
+                                        <input type="file" required class="form-control" name="banner_image"
+                                            value="{{$banner->banner_image}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -45,24 +45,11 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input  required class="form-control" name="product_name"
-                                            value="{{$product->product_name}}">
+                                        <input  required class="form-control" name="seo_key"
+                                            value="{{$banner->seo_key}}">
                                     </div>
                                 </div>
                              
-                                <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-category">Details<span
-                                            class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-lg-6">
-                                        <input  required class="form-control" name="details"
-                                            value="{{$product->details}}">
-                                    </div>
-                                </div>
-                               
-                             
-                             
-
 
 
                                 <div class="form-group row">

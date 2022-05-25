@@ -18,16 +18,14 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">product List</h4>
+                        <h4 class="card-title">banner List</h4>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
                                         <th>Serial No </th>
-                                        <th>Image </th>
-                                        <th>name</th>
-                                        <th>details</th>
-                                  
+                                        <th>banner Image </th>
+                                        <th>Seo Keyword</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -37,28 +35,28 @@
                                     @php
                                     $i = 1;
                                     @endphp
-                                    @foreach($products as $product)
+                                    @foreach($banners as $banner)
                                     <tr>
                                         <th scope="row">{{ $i++ }}</th>
-                                        <td><img src="{{ asset($product->product_image) }}"
-                                                style="width: 50px; height: 50px;"></td>
-                                        <td>{{ $product->product_name }}</td>
-                                        <td>{{ $product->details }}</td>
+                                        <td><img src="{{ asset($banner->banner_image) }}"
+                                                style="width: 100px; height: 100px;"></td>
+                                        <td>{{ $banner->seo_key }}</td>
+                                      
                                     
-                                        @if($product->status == 1)
+                                        @if($banner->status == 1)
                                         <td><span class="badge badge-success">Active</span></td>
                                         @else
                                         <td><span class="badge badge-danger">Inactive</span></td>
                                         @endif
                                         <td>
-                                            @if($product->status == 1) <a
-                                                href="{{ URL::to('product/change_status/'.$product->id) }}"><i
+                                            @if($banner->status == 1) <a
+                                                href="{{ URL::to('banner/change_status/'.$banner->id) }}"><i
                                                     class="fa fa-arrow-circle-down"></i></a>@else<a
-                                                href="{{ URL::to('product/change_status/'.$product->id) }}"><i
+                                                href="{{ URL::to('banner/change_status/'.$banner->id) }}"><i
                                                     class="fa fa-arrow-circle-up"></i></a>@endif <a
-                                                href="{{ URL::to('product/delete/'.$product->id) }}" id="delete"><i
+                                                href="{{ URL::to('banner/delete/'.$banner->id) }}" id="delete"><i
                                                     class="fa fa-trash"></i></a>
-                                                    <a href="{{ URL::to('product/edit/'.$product->id) }}"><i class="fas fa-edit"></i></a>
+                                                    <a href="{{ URL::to('banner/edit/'.$banner->id) }}"><i class="fas fa-edit"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\GallaryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TeamController;
@@ -39,15 +40,15 @@ Route::prefix('team')->group(function(){
 	Route::get('/edit/{id}', [TeamController::class, 'edit'])->name('team.edit');
 	Route::post('/update/{id}', [TeamController::class, 'update'])->name('team.update');
 });
-Route::prefix('product')->group(function(){
-	Route::get('/add', [ProductController::class, 'addproduct'])->name('product.add');
-	Route::post('/store', [ProductController::class, 'storeproduct'])->name('product.store');
-	Route::get('/all-products', [ProductController::class, 'productlist'])->name('product.list');
-	Route::get('/change_status/{id}', [ProductController::class, 'changeStatus']);
-	Route::get('/delete/{id}', [ProductController::class, 'deleteproduct']);
-	Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
-	Route::post('/update/{id}', [ProductController::class, 'update'])->name('product.update');
-});
+// Route::prefix('product')->group(function(){
+// 	Route::get('/add', [ProductController::class, 'addproduct'])->name('product.add');
+// 	Route::post('/store', [ProductController::class, 'storeproduct'])->name('product.store');
+// 	Route::get('/all-products', [ProductController::class, 'productlist'])->name('product.list');
+// 	Route::get('/change_status/{id}', [ProductController::class, 'changeStatus']);
+// 	Route::get('/delete/{id}', [ProductController::class, 'deleteproduct']);
+// 	Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+// 	Route::post('/update/{id}', [ProductController::class, 'update'])->name('product.update');
+// });
 Route::prefix('gallary')->group(function(){
 	Route::get('/add', [GallaryController::class, 'addgallary'])->name('gallary.add');
 	Route::post('/store', [GallaryController::class, 'storegallary'])->name('gallary.store');
@@ -57,6 +58,17 @@ Route::prefix('gallary')->group(function(){
 	Route::get('/edit/{id}', [GallaryController::class, 'edit'])->name('gallary.edit');
 	Route::post('/update/{id}', [GallaryController::class, 'update'])->name('gallary.update');
 });
+
+Route::prefix('banner')->group(function(){
+	Route::get('/add', [BannerController::class, 'addbanner'])->name('banner.add');
+	Route::post('/store', [BannerController::class, 'storebanner'])->name('banner.store');
+	Route::get('/all-banners', [BannerController::class, 'bannerlist'])->name('banner.list');
+	Route::get('/change_status/{id}', [BannerController::class, 'changeStatus']);
+	Route::get('/delete/{id}', [BannerController::class, 'deletebanner']);
+	Route::get('/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
+	Route::post('/update/{id}', [BannerController::class, 'update'])->name('banner.update');
+});
+
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

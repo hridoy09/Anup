@@ -27,44 +27,35 @@
                                 </ul>
                             </div>
                             @endif
-                            <form action="{{ route('product.store') }}" method="post"
+                            <form action="{{ route('banner.store') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-category">Product Image<span
+                                    <label class="col-lg-4 col-form-label" for="val-category">banner Image<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="file" name="product_image" class="form-control" >
+                                        <input type="file" name="banner_image" class="form-control" >
 
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-category">Name<span
+                                    <label class="col-lg-4 col-form-label" for="val-category">Seo Keyword<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" name="product_name" class="form-control"
-                                            placeholder="product alt Title">
+                                        <input type="text" name="seo_key" class="form-control"
+                                            placeholder="banner alt Title">
 
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-category">Details<span
-                                            class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-lg-6">
-                                        <input type="text" name="details" class="form-control"
-                                            placeholder="product alt Title">
-
-                                    </div>
-                                </div>
+                          
                            
 
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
-                                        <button type="submit" class="btn btn-primary">Add product</button>
+                                        <button type="submit" class="btn btn-primary">Add banner</button>
                                     </div>
                                 </div>
                             </form>
