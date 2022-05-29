@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body style="background-color: #E2F0FD;">
+@extends('frontend.layouts.master')
+@section('content')
     <div class="container">
         <div class="row d-flex justify-content-center mx-auto">
             <div class="col-sm-12 col-lg-5 contact-details">
@@ -48,16 +37,17 @@
             <div class=" col-sm-12 col-lg-7">
                 <div>
                     <div class="contact-form-wrapper  contactUsForm">
-                      <form action="#" class="contact-form ">
+                      <form action="{{route('mail.store')}}"  method="post" class="contact-form ">
+                        @csrf
                         <h5 class="title">Contact us</h5>
                         <div>
-                          <input type="text" class="form-control rounded border-white mb-3 form-input" id="name" placeholder="Name" required>
+                          <input type="text" class="form-control rounded border-white mb-3 form-input" id="name" name="name" placeholder="Name" required>
                         </div>
                         <div>
-                          <input type="email" class="form-control rounded border-white mb-3 form-input" placeholder="Email" required>
+                          <input type="number" class="form-control rounded border-white mb-3 form-input" name="email" placeholder="Phone" required>
                         </div>
                         <div>
-                          <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30" placeholder="Message" required></textarea>
+                          <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="5" name="message" cols="30" placeholder="Message" required></textarea>
                         </div>
                         <div class="submit-button-wrapper">
                           <input type="submit" value="Send">
@@ -68,5 +58,21 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+    @foreach ($errors->all() as $error)
+<script type="text/javascript">
+    Toast.fire({
+        icon: 'error',
+        title: '{!! $error !!}',
+    })
+</script>
+@endforeach
+@if(Session::has('success'))
+<script type="text/javascript">
+    Toast.fire({
+        icon: 'success',
+        title: '{!! Session::get('success') !!}',
+    })
+</script>
+@php Session::forget('success') @endphp
+@endif
+@endsection

@@ -1,9 +1,15 @@
 <?php
 
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\ContactinfoController;
 use App\Http\Controllers\Admin\GallaryController;
-use App\Http\Controllers\Admin\ProductController;
+
+use App\Http\Controllers\Admin\SisterConcurnController;
+use App\Http\Controllers\Admin\SisterConcurnSliderController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\MailController;
+use App\Models\Sisterconcurnslider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +34,10 @@ Auth::routes();
 
 Route::get('/', function () {
     return view('frontend.index');
+});
+
+Route::get('/contact-us', function () {
+    return view('frontend.contact-us');
 });
 
 
@@ -70,5 +80,49 @@ Route::prefix('banner')->group(function(){
 });
 
 
+Route::prefix('slider')->group(function(){
+	Route::get('/add', [SliderController::class, 'addslider'])->name('slider.add');
+	Route::post('/store', [SliderController::class, 'storeslider'])->name('slider.store');
+	Route::get('/all-sliders', [SliderController::class, 'sliderlist'])->name('slider.list');
+	Route::get('/change_status/{id}', [SliderController::class, 'changeStatus']);
+	Route::get('/delete/{id}', [SliderController::class, 'deleteslider']);
+	Route::get('/edit/{id}', [SliderController::class, 'edit'])->name('slider.edit');
+	Route::post('/update/{id}', [SliderController::class, 'update'])->name('slider.update');
+});
 
+
+Route::prefix('sisterconcurn')->group(function(){
+	Route::get('/add', [SisterConcurnController::class, 'addsisterconcurn'])->name('sisterconcurn.add');
+	Route::post('/store', [SisterConcurnController::class, 'storesisterconcurn'])->name('sisterconcurn.store');
+	Route::get('/all-sisterconcurns', [SisterConcurnController::class, 'sisterconcurnlist'])->name('sisterconcurn.list');
+	Route::get('/change_status/{id}', [SisterConcurnController::class, 'changeStatus']);
+	Route::get('/delete/{id}', [SisterConcurnController::class, 'deletesisterconcurn']);
+	Route::get('/edit/{id}', [SisterConcurnController::class, 'edit'])->name('sisterconcurn.edit');
+	Route::post('/update/{id}', [SisterConcurnController::class, 'update'])->name('sisterconcurn.update');
+});
+
+
+
+
+Route::prefix('sisterconcurnslider')->group(function(){
+	Route::get('/add', [SisterConcurnSliderController::class, 'addsisterconcurnslider'])->name('sisterconcurnslider.add');
+	Route::post('/store', [SisterConcurnSliderController::class, 'storesisterconcurnslider'])->name('sisterconcurnslider.store');
+	Route::get('/all-sisterconcurnsliders', [SisterConcurnSliderController::class, 'sisterconcurnsliderlist'])->name('sisterconcurnslider.list');
+	Route::get('/change_status/{id}', [SisterConcurnSliderController::class, 'changeStatus']);
+	Route::get('/delete/{id}', [SisterConcurnSliderController::class, 'deletesisterconcurnslider']);
+	Route::get('/edit/{id}', [SisterConcurnSliderController::class, 'edit'])->name('sisterconcurnslider.edit');
+	Route::post('/update/{id}', [SisterConcurnSliderController::class, 'update'])->name('sisterconcurnslider.update');
+});
+
+
+
+
+Route::resource('contact', ContactinfoController::class);
+
+
+Route::prefix('mail')->group(function(){
+Route::post('/store', [MailController::class, 'store'])->name('mail.store');
+Route::get('/all-mail', [MailController::class, 'allmail'])->name('mail.list');
+Route::get('/delete/{id}', [MailController::class, 'deletemail'])->name('mail.destroy');
+});
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
