@@ -9,4 +9,10 @@ class Sisterconcurn extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+   
+    public function slider()
+    {
+        return $this->hasMany(Sisterconcurnslider::class, 'name', 'id');
+    }
 }

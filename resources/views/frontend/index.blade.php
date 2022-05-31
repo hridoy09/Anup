@@ -4,12 +4,13 @@
     <section class="sec1">
         <div class="wrapper">
             <div class="carousel card-carousel1">
+                @foreach ($banners as $banner )
                 <div class="card"> 
-                    <img style="width:100%;" src="{{asset('assets/image/slider.jpg')}}" alt="" height="500px">
+                    <img style="width:100%;" src="{{$banner->banner_image}}" alt="" height="500px">
                 </div>
-                <div class="card"> 
-                    <img style="width:100%;"  src="{{asset('assets/image/slider1.jpg')}}" alt="" height="500px">
-                </div>
+                @endforeach
+                
+                
 </div>
         </div>
         <div class="content">
@@ -51,25 +52,11 @@
     <section class="sec3">
         <div class="wrapper">
             <div class="carousel card-carousel">
+                @foreach ($sliders as $slider)
                 <div class="card"> 
-                    <img src="{{asset('assets/image/Slider-Image2/SlideImage1.jpg')}}" alt="" width="100%" height="265px">
+                    <img src="{{$slider->slider_image}}" alt="" width="100%" height="265px">
                 </div>
-                <div class="card"> 
-                    <img  src="{{asset('assets/image/Slider-Image2/SlideImage2.jpg')}}" alt="" width="100%" height="265px">
-                 </div>
-                 <div class="card"> 
-                    <img src="{{asset('assets/image/Slider-Image2/SlideImage3.jpg')}}" alt="" width="100%" height="265px">
-                </div>
-                <div class="card"> 
-                    <img  src="{{asset('assets/image/Slider-Image2/SlideImage4.jpg')}}" alt="" width="100%" height="265px">
-                 </div>
-                 <div class="card"> 
-                    <img  src="{{asset('assets/image/Slider-Image2/SlideImage2.jpg')}}" alt="" width="100%" height="265px">
-                 </div>
-                 <div class="card"> 
-                    <img src="{{asset('assets/image/Slider-Image2/SlideImage3.jpg')}}" alt="" width="100%" height="265px">
-                </div>
-            
+                @endforeach
              </div>
         </div>
     </section>

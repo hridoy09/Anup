@@ -5,10 +5,12 @@ use App\Http\Controllers\Admin\ContactinfoController;
 use App\Http\Controllers\Admin\GallaryController;
 
 use App\Http\Controllers\Admin\SisterConcurnController;
+use App\Http\Controllers\Admin\SisterConcurnDetailsController;
 use App\Http\Controllers\Admin\SisterConcurnSliderController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\UserController;
 use App\Models\Sisterconcurnslider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,21 +26,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('backend.layouts.master');
+
+
+
+
+
+// User
+
+Route::prefix('/')->group(function(){
+	Route::get('', [UserController::class, 'index'])->name('index');
+	Route::get('gallery', [UserController::class, 'gallery'])->name('gallery');
+	Route::get('contact-us', [UserController::class, 'contact'])->name('contact');
+	Route::get('sister-list', [UserController::class, 'sisterList'])->name('sisterlist');
+	Route::get('{id}/sister-details', [UserController::class, 'sisterdetails'])->name('sisterdetails');
+	Route::get('Sponsor-Directors', [UserController::class, 'Sponsordirectors'])->name('Sponsordirectors');
+	
 });
+
+
+
+
+
+
 
 
 Auth::routes();
 
 
-Route::get('/', function () {
-    return view('frontend.index');
+Route::middleware(['auth'])->group(function () {
+
+Route::get('/dashboard', function () {
+    return view('backend.layouts.master');
 });
 
-Route::get('/contact-us', function () {
-    return view('frontend.contact-us');
-});
 
 
 Route::prefix('team')->group(function(){
@@ -118,6 +138,7 @@ Route::prefix('sisterconcurnslider')->group(function(){
 
 
 Route::resource('contact', ContactinfoController::class);
+Route::resource('sisterconcurn', SisterConcurnDetailsController::class);
 
 
 Route::prefix('mail')->group(function(){
@@ -126,3 +147,7 @@ Route::get('/all-mail', [MailController::class, 'allmail'])->name('mail.list');
 Route::get('/delete/{id}', [MailController::class, 'deletemail'])->name('mail.destroy');
 });
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+});
+
+

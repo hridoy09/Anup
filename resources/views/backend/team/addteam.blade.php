@@ -61,13 +61,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-category">Designation<span
+                                    <label class="col-lg-4 col-form-label" for="val-category">Sister-Concurn Names<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <select class="form-control"  name="category">
-                                            <option value="administration">Administration</option>
-                                            <option value="sales">Sales</option>
+                                        <select class="form-control"  name="sisterconcurn_name">
+                                            @foreach ($names as $name )
+                                            <option value="{{$name->id}}">{{$name->name}}</option>
+                                            @endforeach
+                                           
                                         </select>
 
                                     </div>

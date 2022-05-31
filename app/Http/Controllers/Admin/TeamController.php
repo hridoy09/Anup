@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sisterconcurn;
 use Illuminate\Http\Request;
 use App\Models\Team;
 use Image;
@@ -12,7 +13,9 @@ class TeamController extends Controller
 {
 
     public function addteam(){
-    	return view('backend.team.addteam');
+
+        $names = Sisterconcurn::all();
+    	return view('backend.team.addteam',compact('names'));
     }
 
     public function storeteam(Request $request){
@@ -43,7 +46,7 @@ class TeamController extends Controller
       	'image' => 'admin/team/'.$fileName,
         'name' => $request->name,
         'designation' => $request->designation,
-        'category' => $request->category,
+        'sisterconcurn_name' => $request->sisterconcurn_name,
       	'created_at' => Carbon::now(),
   	 ]);
     	$notification = array(
@@ -54,7 +57,7 @@ class TeamController extends Controller
     }
 
     public function teamlist(){
-    	$teams = Team::all();
+    	$teams = Team::with('names')->get();
     	return view('backend.team.listteam',compact('teams'));
     }
 
@@ -92,9 +95,9 @@ class TeamController extends Controller
 
 	public function edit($id)
     {
-
+        $names = Sisterconcurn::all();
         $team=Team::find($id);
-        return view('backend.team.editteam', compact('team'));
+        return view('backend.team.editteam', compact('team','names'));
     }
 
     /**
@@ -118,7 +121,7 @@ class TeamController extends Controller
             'image' => 'admin/team/'.$fileName,
           'name' => $request->name,
           'designation' => $request->designation,
-          'category' => $request->category,
+          'sisterconcurn_name' => $request->sisterconcurn_name,
 
           
             'created_at' => Carbon::now(),

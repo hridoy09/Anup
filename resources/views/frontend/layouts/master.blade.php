@@ -239,3 +239,24 @@
     });
 });
 </script>
+<script>
+     
+    var modal = document.getElementById('modal1');
+
+    var modalClose = document.getElementById('modal-close1');
+    modalClose.addEventListener('click', function() { 
+     modal.style.display = "none";
+    });
+
+    document.addEventListener('click', function (e) { 
+     if (e.target.className.indexOf('modal-target1') !== -1) {
+  var img = e.target;
+  var modalImg = document.getElementById("modal-content1");
+  var captionText = document.getElementById("modal-caption1");
+  modal.style.display = "block";
+  modalImg.src = img.src;
+  captionText.innerHTML = img.alt;
+}
+});
+
+  </script>

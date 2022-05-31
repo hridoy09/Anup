@@ -6,32 +6,35 @@
 				<div class="row justify-content-center">
 					<div class="card col-12">
 						<div class="card-block">
-							<h4 class="sub-title">contact List</h4>
+							<h4 class="sub-title">Sisterconcurn List</h4>
 							<table class="table">
 								<thead>
 									<tr>
 										<th scope="col">Sl</th>
-										<th scope="col">Phone Number</th>
-										<th scope="col">Email</th>
-										<th scope="col">Factory Address</th>
+										<th scope="col">Name</th>
+										<th scope="col">Sisterconcurn Name</th>
+										<th scope="col">Phone</th>
+										<th scope="col">Details</th>
 										<th scope="col">Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($all_contact as $contact)
+									@foreach($all_detail as $detail)
 									<tr>
 										<th scope="row">{{$loop->iteration}}</th>
-										<td>{{$contact->phone_number}}</td>
-										<td>{{$contact->email}}</td>
-										<td>{{$contact->factory_address}}</td>
+										<td>{{$detail->name}}</td>
+										<td>{{$detail->sisterconcurn_name}}</td>
+										<td>{{$detail->number}}</td>
+										<td>{{$detail->details}}</td>
 										<td>
-											<form action="{{ route('contact.destroy',$contact->id) }}" method="POST">
-												<a class="text-success" href="{{ route('contact.edit',$contact->id) }}"><i class="far fa-edit"></i></a> ||
+											<form action="{{ route('sisterconcurn.destroy',$detail->id) }}" method="POST">
+												<a class="text-success" href="{{ route('sisterconcurn.edit',$detail->id) }}"><i class="far fa-edit"></i></a> ||
 							                    @csrf
 							                    @method('DELETE')
 							      
 							                    <button type="submit" class="text-danger" style="border: none; background: inherit; cursor: pointer;"><i class="fas fa-trash-alt"></i></button>
 							                </form>
+											
 										</td>
 									</tr>
 									@endforeach

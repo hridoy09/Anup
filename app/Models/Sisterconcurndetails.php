@@ -5,13 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sisterconcurnslider extends Model
+class Sisterconcurndetails extends Model
 {
     use HasFactory;
     protected $guarded=[];
-
-    public function sisterconcurn()
-    {
-        return $this->hasOne(Sisterconcurn::class, 'id', 'name');
-    }
 }

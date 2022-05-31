@@ -66,7 +66,7 @@ class ContactinfoController extends Controller
         $contact=Contactinfo::find($id);
       
         
-        return view('admin.contact.edit_contact',compact('contact'));
+        return view('backend.contact.contact_edit',compact('contact'));
     }
 
     /**
@@ -76,7 +76,7 @@ class ContactinfoController extends Controller
      * @param  \App\Models\Subcategroy  
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contactinfo $contact)
+    public function update(Request $request, $id)
 
     {
     
@@ -86,7 +86,7 @@ class ContactinfoController extends Controller
             'factory_address' => 'required',
         ]);
     
-        $contact->update($request->all());
+        Contactinfo::find($id)->update($request->all());
     
         return redirect()->route('contact.index')
                         ->with('success','Sub-contact updated successfully');

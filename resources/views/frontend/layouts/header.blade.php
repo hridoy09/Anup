@@ -10,12 +10,12 @@
    </button>
    <div class="collapse navbar-collapse navcontent1" id="main_nav">
      <ul class="navbar-nav">
-         <li class="nav-item active nav-item_con"> <a class="nav-link" href="index.html">Home </a> </li>              
+         <li class="nav-item active nav-item_con"> <a class="nav-link" href="{{route('index')}}">Home </a> </li>              
          <li class="nav-item dropdown nav-item_con">
-          <a class="nav-link" href="newpage.html">  Our Sister Consurn </a>                 
+          <a class="nav-link" href="{{route('sisterlist')}}">  Our Sister Consurn </a>                 
        </li>
-         <li class="nav-item nav-item_con"><a class="nav-link" href="Sponsor-Directors.html"> Our Team </a></li>
-         <li class="nav-item nav-item_con"><a class="nav-link" href="contact-us.html"> Contact Us</a></li>
+         <li class="nav-item nav-item_con"><a class="nav-link" href="{{route('Sponsordirectors')}}"> Our Team </a></li>
+         <li class="nav-item nav-item_con"><a class="nav-link" href="{{route('contact')}}"> Contact Us</a></li>
          
          
       </ul>

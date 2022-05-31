@@ -50,11 +50,11 @@ class SisterConcurnSliderController extends Controller
             'message' => 'slider Added Successfully',
             'alert-type' => 'success',
         );
-      return redirect()->route('slider.list')->with($notification);
+      return redirect()->route('sisterconcurnslider.list')->with($notification);
     }
 
     public function sisterconcurnsliderlist(){
-    	$sliders = Sisterconcurnslider::all();
+    	$sliders = Sisterconcurnslider::with('sisterconcurn')->get();
     	return view('backend.sisterconcurn.slider.listslider',compact('sliders'));
     }
 
@@ -94,7 +94,9 @@ class SisterConcurnSliderController extends Controller
     {
 
         $slider=Sisterconcurnslider::find($id);
-        return view('backend.sisterconcurn.slider.editslider', compact('slider'));
+
+        $names=Sisterconcurn::all();
+        return view('backend.sisterconcurn.slider.editslider', compact('slider', 'names'));
     }
 
     /**

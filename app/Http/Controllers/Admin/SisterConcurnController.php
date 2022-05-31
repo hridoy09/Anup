@@ -15,6 +15,7 @@ class SisterConcurnController extends Controller
     }
 
     public function storesisterconcurn(Request $request){
+
     	// $validateData = $request->validate([
     	// 	'image' => 'required|image|mimes:jpg,png,jpeg',
         //     'seo_key' => 'required',
@@ -45,12 +46,7 @@ class SisterConcurnController extends Controller
             $file->move($destinationPath3,$fileName3);
     	}
 
-		//
-
-    	// $image = $request->file('banner');
-    	// $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    	// Image::make($image)->resize(1017,400)->save('admin/banner/'.$name_gen);
-    	// $save_url = 'admin/banner/'.$name_gen;
+	
     Sisterconcurn::insert([
       	'banner_img' => 'admin/sisterconcurn/banner_img/'.$fileName1,
         'name' => $request->name,
@@ -62,12 +58,16 @@ class SisterConcurnController extends Controller
         'factory_address' => $request->factory_address,
       	'created_at' => Carbon::now(),
   	 ]);
+       
     	$notification = array(
             'message' => 'sisterconcurn Added Successfully',
             'alert-type' => 'success',
         );
       return redirect()->route('sisterconcurn.list')->with($notification);
     }
+
+
+
 
     public function sisterconcurnlist(){
     	$sisterconcurns = Sisterconcurn::all();

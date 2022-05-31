@@ -60,13 +60,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-category">Designation<span
+                                    <label class="col-lg-4 col-form-label" for="val-category">sisterconcurn_name<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <select class="form-control"  name="category">
-                                            <option value="administration" {{$team->category == 'administration' ? 'selected': ''}}>{{$team->category}}</option>                                        
-                                            <option value="sales" {{$team->category == 'sales' ? 'selected': ''}}>{{$team->category}}</option>                                        
+                                        <select class="form-control"  name="sisterconcurn_name">
+                                            @foreach ($names as $name )
+                                            <option value="{{$name->id}}" {{ $name->id == $team->sisterconcurn_name ?  'selected':'' }}>{{$name->name}}</option>
+                                            @endforeach
+                                                                                 
                                            
                                         </select>
 

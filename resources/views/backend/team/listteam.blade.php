@@ -27,7 +27,7 @@
                                         <th>Image </th>
                                         <th>name</th>
                                         <th>Designation</th>
-                                        <th>Category</th>
+                                        <th>Sister Concurn Name</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -44,7 +44,7 @@
                                                 style="width: 50px; height: 50px;"></td>
                                         <td>{{ $team->name }}</td>
                                         <td>{{ $team->designation }}</td>
-                                        <td>{{ $team->category }}</td>
+                                        <td>{{ $team->names->name }}</td>
                                         @if($team->status == 1)
                                         <td><span class="badge badge-success">Active</span></td>
                                         @else

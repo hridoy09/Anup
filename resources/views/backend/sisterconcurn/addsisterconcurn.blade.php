@@ -27,7 +27,7 @@
                                 </ul>
                             </div>
                             @endif
-                            <form action="{{ route('sisterconcurn.store') }}" method="post"
+                            <form action="{{ url('sisterconcurn/store') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
 
@@ -36,7 +36,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="file" name="banner_img" class="form-control" required >
+                                        <input type="file" name="banner_img" class="form-control"  >
 
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" name="name" class="form-control"
-                                            placeholder="sisterconcurn name" required>
+                                            placeholder="sisterconcurn name" >
 
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="file" name="logo_img" class="form-control"
-                                            placeholder="sisterconcurn logo" required>
+                                            placeholder="sisterconcurn logo" >
 
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <textarea type="text" name="about_us" class="form-control"
-                                            placeholder="About us" required></textarea>
+                                            placeholder="About us" ></textarea>
 
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="file" name="side_img" class="form-control"
-                                            placeholder="sisterconcurn side image" required>
+                                            placeholder="sisterconcurn side image" >
 
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" name="phone" class="form-control"
-                                            placeholder="phone" required>
+                                            placeholder="phone" >
 
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" name="email" class="form-control"
-                                            placeholder="Email" required>
+                                            placeholder="Email" >
 
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" name="factory_address" class="form-control"
-                                            placeholder="Factory Address" required>
+                                            placeholder="Factory Address" >
 
                                     </div>
                                 </div>
