@@ -51,7 +51,7 @@ class BannerController extends Controller
     }
 
     public function bannerlist(){
-    	$banners = Banner::all();
+    	$banners = Banner::paginate(10);
     	return view('backend.banner.listbanner',compact('banners'));
     }
 

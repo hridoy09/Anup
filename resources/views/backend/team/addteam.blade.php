@@ -46,7 +46,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" name="name" class="form-control"
-                                            placeholder="team alt Title">
+                                            placeholder="Name">
 
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" name="designation" class="form-control"
-                                            placeholder="team alt Title">
+                                            placeholder="Designation">
 
                                     </div>
                                 </div>
@@ -65,12 +65,9 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <select class="form-control"  name="sisterconcurn_name">
-                                            @foreach ($names as $name )
-                                            <option value="{{$name->id}}">{{$name->name}}</option>
-                                            @endforeach
-                                           
-                                        </select>
+
+                                        <input type="text" name="sisterconcurn_name" class="form-control"
+                                        placeholder="sisterconcurn name">
 
                                     </div>
                                 </div>

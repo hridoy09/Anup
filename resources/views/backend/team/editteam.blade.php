@@ -64,13 +64,10 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <select class="form-control"  name="sisterconcurn_name">
-                                            @foreach ($names as $name )
-                                            <option value="{{$name->id}}" {{ $name->id == $team->sisterconcurn_name ?  'selected':'' }}>{{$name->name}}</option>
-                                            @endforeach
-                                                                                 
-                                           
-                                        </select>
+                                        
+                                        <input type="text" name="sisterconcurn_name" class="form-control" value="{{$team->sisterconcurn_name}}"
+                                        placeholder="sisterconcurn name">
+                                        
 
                                     </div>
                                 </div>

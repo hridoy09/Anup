@@ -39,20 +39,16 @@ class SisterConcurnController extends Controller
             $destinationPath2 = public_path().'/admin/sisterconcurn/logo_img' ;
             $file->move($destinationPath2,$fileName2);
     	}
-        if($request->hasFile('side_img')) {
-            $file = $request->file('side_img') ;
-            $fileName3 = $file->getClientOriginalName() ;
-            $destinationPath3 = public_path().'/admin/sisterconcurn/side_img' ;
-            $file->move($destinationPath3,$fileName3);
-    	}
+        
 
 	
     Sisterconcurn::insert([
       	'banner_img' => 'admin/sisterconcurn/banner_img/'.$fileName1,
         'name' => $request->name,
         'logo_img' => 'admin/sisterconcurn/logo_img/'.$fileName2,
-        'side_img' => 'admin/sisterconcurn/side_img/'.$fileName3,
+       
         'about_us'=> $request->about_us,
+        'iframe'=> $request->iframe,
         'phone' => $request->phone,
         'email' => $request->email,
         'factory_address' => $request->factory_address,
@@ -97,7 +93,7 @@ class SisterConcurnController extends Controller
     	$sisterconcurn = Sisterconcurn::findOrFail($id);
 		unlink($sisterconcurn->banner_img);
 		unlink($sisterconcurn->logo_img);
-		unlink($sisterconcurn->side_img);
+	
 		Sisterconcurn::findOrFail($id)->delete();
 
 		
@@ -138,18 +134,14 @@ class SisterConcurnController extends Controller
             $destinationPath2 = public_path().'/admin/sisterconcurn/logo_img' ;
             $file->move($destinationPath2,$fileName2);
     	}
-        if($request->hasFile('side_img')) {
-            $file = $request->file('side_img') ;
-            $fileName3 = $file->getClientOriginalName() ;
-            $destinationPath3 = public_path().'/admin/sisterconcurn/side_img' ;
-            $file->move($destinationPath3,$fileName3);
-    	}
+
         $sisterconcurns->update([
             'banner_img' => 'admin/sisterconcurn/banner_img/'.$fileName1,
             'name' => $request->name,
             'logo_img' => 'admin/sisterconcurn/logo_img/'.$fileName2,
-            'side_img' => 'admin/sisterconcurn/side_img/'.$fileName3,
+        
             'about_us'=> $request->about_us,
+            'iframe'=> $request->iframe,
             'phone' => $request->phone,
             'email' => $request->email,
             'factory_address' => $request->factory_address,
@@ -157,10 +149,10 @@ class SisterConcurnController extends Controller
          ]);
     	$save_url1 = 'admin/sisterconcurn/banner_img/'.$fileName1;
     	$save_url2 = 'admin/sisterconcurn/logo_img/'.$fileName2;
-    	$save_url3 = 'admin/sisterconcurn/side_img/'.$fileName3;
+    	
           $sisterconcurns->banner_img = $save_url1;
           $sisterconcurns->logo_img = $save_url2;
-          $sisterconcurns->side_img= $save_url3;
+         
           $sisterconcurns->save();
             return redirect('sisterconcurn/all-sisterconcurns');
       }

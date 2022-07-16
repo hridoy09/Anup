@@ -30,13 +30,13 @@
                             @endif
                             <form class="form-valide" action="{{route('sisterconcurn.update',$sisterconcurn->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
-
+                                @method('PATCH')
                                 <div class="form-group row">
                                     <label class="col-lg-4 col-form-label" for="val-category">Banner Image<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="file" required class="form-control" name="banner_img"
+                                        <input type="file"  class="form-control" name="banner_img"
                                             value="{{$sisterconcurn->banner_img}}">
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input  type="text" required class="form-control" name="name"
+                                        <input  type="text"  class="form-control" name="name"
                                             value="{{$sisterconcurn->name}}">
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="file"  required class="form-control" name="logo_img"
+                                        <input type="file"   class="form-control" name="logo_img"
                                             value="{{$sisterconcurn->logo_img}}">
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <textarea required class="form-control" name="about_us"
+                                        <textarea  class="form-control" name="about_us"
                                             value="{{$sisterconcurn->about_us}}">{{$sisterconcurn->about_us}}</textarea>
                                     </div>
                                 </div>
@@ -74,8 +74,8 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="file"  required class="form-control" name="side_img"
-                                            value="{{$sisterconcurn->side_img}}">
+                                        <input type="text"   class="form-control" name="side_img"
+                                            value="{{$sisterconcurn->iframe}}">
                                     </div>
                                 </div>
                              
@@ -84,7 +84,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text"  required class="form-control" name="phone"
+                                        <input type="text"   class="form-control" name="phone"
                                             value="{{$sisterconcurn->phone}}">
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input  type="text" required class="form-control" name="email"
+                                        <input  type="text"  class="form-control" name="email"
                                             value="{{$sisterconcurn->email}}">
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input  type="text" required class="form-control" name="factory_address"
+                                        <input  type="text"  class="form-control" name="factory_address"
                                             value="{{$sisterconcurn->factory_address}}">
                                     </div>
                                 </div>

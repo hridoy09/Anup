@@ -71,12 +71,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-category">Side Image<span
+                                    <label class="col-lg-4 col-form-label" for="val-category">Iframe Link<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="file" name="side_img" class="form-control"
-                                            placeholder="sisterconcurn side image" >
+                                        <input type="text" name="iframe" class="form-control"
+                                            placeholder="sisterconcurn Iframe" >
 
                                     </div>
                                 </div>

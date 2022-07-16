@@ -29,7 +29,7 @@
     <section class="container NewPage-sec3">
         <div class="row">
             <div class="col-lg-5 col-md-12 mx-auto">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.605069263278!2d91.84479151426987!3d22.36853624606858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd9931c81e8c5%3A0xee22258ed120597!2sCoders%20Point!5e0!3m2!1sen!2sbd!4v1653559740665!5m2!1sen!2sbd" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="{{$sisterdetails->iframe}}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-5 col-md-12 mx-auto">
                 <p class="row1-header">

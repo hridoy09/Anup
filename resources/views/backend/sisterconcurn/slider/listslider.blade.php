@@ -40,7 +40,7 @@
                                         <th scope="row">{{ $i++ }}</th>
                                         <td><img src="{{ asset($slider->slider_image) }}"
                                                 style="width: 100px; height: 100px;"></td>
-                                        <td>{{ $slider->sisterconcurn->name }}</td>
+                                        <td>{{ $slider->sisterconcurn->name??'' }}</td>
                                       
                                     
                                         @if($slider->status == 1)

@@ -28,7 +28,7 @@
                                         <th>Name</th>
                                         <th>Logo</th>
                                         <th>About Us</th>
-                                        <th>Side Image</th>
+                                        <th>Iframe Link</th>
                                         <th>Phone</th>
                                         <th>Email</th>
                                         <th>Factory Address</th>
@@ -50,8 +50,7 @@
                                         <td><img src="{{ asset($sisterconcurn->logo_img) }}"
                                             style="width: 100px; height: 100px;"></td>
                                         <td>{{ $sisterconcurn->about_us }}</td>
-                                        <td><img src="{{ asset($sisterconcurn->side_img) }}"
-                                            style="width: 100px; height: 100px;"></td>
+                                        <td>{{$sisterconcurn->iframe }} </td>
                                         <td>{{ $sisterconcurn->phone }}</td>
                                         <td>{{ $sisterconcurn->email }}</td>
                                         <td>{{ $sisterconcurn->factory_address }}</td>

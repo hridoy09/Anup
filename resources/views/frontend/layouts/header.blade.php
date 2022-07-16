@@ -2,7 +2,7 @@
   <div class="container-fluid">
   
    <div class="logo">
-      <img src="{{asset('assets/image/anupBiswasLogo.png')}}" alt="">
+      <img src="{{asset('assets/image/src.png')}}" alt="">
    </div>
   
    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@
      <ul class="navbar-nav">
          <li class="nav-item active nav-item_con"> <a class="nav-link" href="{{route('index')}}">Home </a> </li>              
          <li class="nav-item dropdown nav-item_con">
-          <a class="nav-link" href="{{route('sisterlist')}}">  Our Sister Consurn </a>                 
+          <a class="nav-link" href="{{route('sisterlist')}}">  Our Sister Concern</a>                 
        </li>
          <li class="nav-item nav-item_con"><a class="nav-link" href="{{route('Sponsordirectors')}}"> Our Team </a></li>
          <li class="nav-item nav-item_con"><a class="nav-link" href="{{route('contact')}}"> Contact Us</a></li>

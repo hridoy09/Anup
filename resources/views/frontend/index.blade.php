@@ -15,8 +15,8 @@
         </div>
         <div class="content">
             <div class="another--three-blocks">
-                <a class="blockone" href="Gallery.html">Gallery </a> 
-                <a class="blockthree" href="contact-us.html"> Contact us</a>
+                <a class="blockone" href="{{route('gallery')}}">Gallery </a> 
+                <a class="blockthree" href="{{route('contact')}}"> Contact us</a>
             </div>  
         </div>
   
@@ -25,26 +25,31 @@
    <section class="sec2 row">
         <div class="slider2 col-lg-5  col-md-11  col-sm-11 mx-auto">
            <div class="rowImage">
-                <img  style="width: 100%;" src="{{asset('assets/image/slider2/slider21.png')}}">
-                <button  type="button" class="btn btn-primary btn-lg jwuButton">Join with us</button>
+                <img  style="width: 100%;" src="{{asset('assets/image/new.jpg')}}">
+                
             </div>
           </div>
         <div class="content1 col-lg-5 col-md-11 col-sm-11 mx-auto">
             <div class="content1-sec">
                 <p class="content1-text">WELCOME TO <br><span>
-                    ANUP BISWAS</span></p>
+                    SRC EXPORT IMPORT & COLD STORAGE</span></p>
                 <!-- <p class="content1-text2">BLUE AQUA <span>Drinking Water  –  Drink The Difference </span></p> -->
                 <p style="text-align: center; margin-top: 40px; ">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    SRC Cold storage came into the production in 2021 as a sister concern of Anup 
+Biswas & Brothers. It is located in the center of Iqbal Road, Fisheryghat , 
+Patherghata ,Chittagong. The plant has build up with high technology and 
+environment friendly equipment .The plant has modern storage facilities for the 
+preservation of various types of Fish, Dry Fish, Fruits and Vegetables.
                 </p>
                 <p style="text-align: center; margin-top: 20px; ">
-                    Skilled sales and suppliers in our transportation system are <br> always ready to deliver <span style="font-weight: bold;">BLUE AQUA</span> drinking water jars & small <br> bottles to your office, factory, residence, hospital, restaurant,
-                    <br> shopping center and etc.
+                    It is one 
+of the newest cold storage in Chittagong with high technology and modern 
+storage facilitated in affordable cost .The storing capacity of the cold storage 
+Aprrox 240 (Two Hundred Forty) Tons.
                 </p>
-                <p style="text-align: center; margin-top: 20px; ">Wash your hands well before meals, follow hygiene rules, and <br> always drink <span style="font-weight: bold;">BLUE AQUA</span> drinking water to stay healthy.</p>
-                <div class="readMore">
-                    <a href="#">READ MORE</a>
-                </div>
+                <p style="text-align: center; margin-top: 20px; ">After establishment it is playing a great 
+                    role in the economy of port city Chittagong.</p>
+                
             </div>
         </div>
     </section> 

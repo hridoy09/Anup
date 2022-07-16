@@ -52,6 +52,28 @@
                         <span class="pcoded-micon">
                             <i class="feather icon-list"></i>
                         </span>
+                        <span class="pcoded-mtext">Gallary</span>
+                    </a>
+                    <ul class="pcoded-submenu">
+                        <li class=" ">
+                            <a href="{{route('gallary.add')}}" class="">
+                                <span class="">Add Image</span>
+                            </a>
+                            
+                        </li>
+                        <li class="">
+                            <a href="{{route('gallary.list')}}" class="">
+                                <span class="">Image List</span>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+                <li class="pcoded-hasmenu">
+                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-list"></i>
+                        </span>
                         <span class="pcoded-mtext">Sisterconcurn</span>
                     </a>
                     <ul class="pcoded-submenu">

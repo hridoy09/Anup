@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('about_us');
             $table->string('logo_img');
-            $table->string('side_img');
-            $table->integer('phone');
+            $table->string('iframe');
+            $table->string('phone');
             $table->string('email');
             $table->string('factory-address');
             $table->integer("status")->default("1");

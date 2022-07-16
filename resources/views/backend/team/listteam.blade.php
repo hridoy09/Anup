@@ -40,11 +40,11 @@
                                     @foreach($teams as $team)
                                     <tr>
                                         <th scope="row">{{ $i++ }}</th>
-                                        <td><img src="{{ asset($team->image) }}"
+                                        <td><img src="{{ asset($team->image??'') }}"
                                                 style="width: 50px; height: 50px;"></td>
-                                        <td>{{ $team->name }}</td>
-                                        <td>{{ $team->designation }}</td>
-                                        <td>{{ $team->names->name }}</td>
+                                        <td>{{ $team->name??''}}</td>
+                                        <td>{{ $team->designation??'' }}</td>
+                                        <td>{{ $team->sisterconcurn_name??'' }}</td>
                                         @if($team->status == 1)
                                         <td><span class="badge badge-success">Active</span></td>
                                         @else

@@ -116,9 +116,9 @@
             speed: 500,
             slidesToShow: 3,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 1000,
-            dots: true,
+            dots: false,
             // centerMode: true,
             responsive: [{
                 breakpoint: 1024,

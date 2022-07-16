@@ -50,7 +50,7 @@ class UserController extends Controller
 
     public function Sponsordirectors()
     {
-        $teams=Team::with('names')->get();
+        $teams=Team::with('names')->paginate(4);
       
         return view('frontend.Sponsor-Directors',compact('teams'));
     }
